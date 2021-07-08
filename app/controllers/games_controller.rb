@@ -1,11 +1,11 @@
 require "open-uri"
 
 class GamesController < ApplicationController
-  VOWELS = %w(A E I O U)
 
   def new
-    @letters = Array.new(4) { VOWELS.sample }
-    @letters += Array.new(6) { (('A'..'Z').to_a - VOWELS).sample }
+    vowels = %w(A E I O U)
+    @letters = Array.new(4) { vowels.sample }
+    @letters += Array.new(6) { (('A'..'Z').to_a - vowels).sample }
     @letters.shuffle!
   end
 
