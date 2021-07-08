@@ -1,1 +1,9 @@
+<h1>Result</h1>
 
+<% if @included %>
+  <p>Congratulations <strong><%= @word %></strong> is included...</p>
+  <% else %>
+  <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(' ') %></p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
